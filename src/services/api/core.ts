@@ -6,15 +6,18 @@ const BASE_URL = 'https://api.core.ac.uk/v3/search/works';
 export async function searchCORE(params: SearchParams): Promise<APIResponse> {
   try {
     const query = encodeURIComponent(params.keywords);
-    const limit = Math.min(params.maxResults || 20, 10);
+    const limit = Math.min(params.maxResults || 20, 100);
 
-    const url = `${BASE_URL}?q=${query}&limit=${limit}`;
+    const url = `${BASE_URL}?q=${query}&limit=${limit}&scroll=false`;
 
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
 
     if (!response.ok) {
-      if (response.status === 401 || response.status === 403) {
-        console.warn('CORE API requires authentication. Skipping...');
+      if (response.status === 401 || response.status === 403 || response.status === 429) {
         return {
           success: true,
           documents: [],

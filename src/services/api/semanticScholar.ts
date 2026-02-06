@@ -29,6 +29,14 @@ export async function searchSemanticScholar(params: SearchParams): Promise<APIRe
     const data = await response.json();
     const documents: Document[] = [];
 
+    if (!data || (!data.data && !Array.isArray(data))) {
+      return {
+        success: true,
+        documents: [],
+        source: 'SemanticScholar'
+      };
+    }
+
     if (data.data && Array.isArray(data.data)) {
       for (const item of data.data) {
         const abstract = cleanText(item.abstract || '');

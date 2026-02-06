@@ -24,23 +24,32 @@ export async function searchArXiv(params: SearchParams): Promise<APIResponse> {
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
 
+    if (xmlDoc.getElementsByTagName('parsererror').length > 0) {
+      throw new Error('XML parsing error from arXiv');
+    }
+
     const entries = xmlDoc.getElementsByTagName('entry');
     const documents: Document[] = [];
 
     for (let i = 0; i < entries.length; i++) {
       const entry = entries[i];
 
-      const title = entry.getElementsByTagName('title')[0]?.textContent || '';
+      let title = entry.getElementsByTagName('title')[0]?.textContent || '';
+      title = title.replace(/\n\s+/g, ' ').trim();
+
       const summary = entry.getElementsByTagName('summary')[0]?.textContent || '';
       const published = entry.getElementsByTagName('published')[0]?.textContent || '';
-      const id = entry.getElementsByTagName('id')[0]?.textContent || '';
+      let id = entry.getElementsByTagName('id')[0]?.textContent || '';
+      id = id.trim();
 
       const authors: string[] = [];
       const authorElements = entry.getElementsByTagName('author');
       for (let j = 0; j < authorElements.length; j++) {
         const name = authorElements[j].getElementsByTagName('name')[0]?.textContent;
-        if (name) authors.push(name);
+        if (name) authors.push(name.trim());
       }
+
+      if (!title || !id) continue;
 
       const cleanedSummary = cleanText(summary);
       const fullText = `${title}\n\n${cleanedSummary}`;

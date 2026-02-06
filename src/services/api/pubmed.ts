@@ -53,13 +53,13 @@ export async function searchPubMed(params: SearchParams): Promise<APIResponse> {
       const title = article.title || 'Untitled';
       const authors = article.authors?.map((a: any) => a.name).filter(Boolean) || [];
 
-      const pubDate = article.pubdate || article.epubdate || '';
+      const pubDate = article.pubdate || article.epubdate || article.sortpubdate || '';
       const dateStr = pubDate ? formatDate(pubDate) : formatDate(new Date());
 
       if (params.dateTo && dateStr > params.dateTo) continue;
       if (params.dateFrom && dateStr < params.dateFrom) continue;
 
-      const abstract = article.source || '';
+      const abstract = article.abstracttext || article.source || article.snippet || '';
       const fullText = `${title}. ${abstract}`;
 
       const doc: Document = {
