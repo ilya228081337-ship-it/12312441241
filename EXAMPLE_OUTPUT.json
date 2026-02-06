@@ -1,0 +1,121 @@
+[
+  {
+    "id": "doc_1738843200000_abc123xyz",
+    "title": "Climate Change and Its Impact on Global Agriculture: A Comprehensive Review",
+    "authors": [
+      "Smith, John A.",
+      "Johnson, Emily R.",
+      "Chen, Wei"
+    ],
+    "date": "2025-05-15",
+    "doi": "10.1234/example.2025.05.001",
+    "url": "https://doi.org/10.1234/example.2025.05.001",
+    "language": "en",
+    "source": "OpenAlex",
+    "abstract": "This comprehensive review examines the multifaceted impacts of climate change on global agricultural systems. We analyze recent data showing temperature increases of 1.2°C above pre-industrial levels and their effects on crop yields, water availability, and food security. Our findings indicate that without significant mitigation efforts, agricultural productivity could decline by 20-30% in vulnerable regions by 2050. The study synthesizes over 500 peer-reviewed articles and proposes adaptive strategies including drought-resistant crop varieties, precision agriculture technologies, and sustainable water management practices.",
+    "full_text_chunks": [
+      "Climate Change and Its Impact on Global Agriculture: A Comprehensive Review. This comprehensive review examines the multifaceted impacts of climate change on global agricultural systems. We analyze recent data showing temperature increases of 1.2°C above pre-industrial levels and their effects on crop yields, water availability, and food security. Introduction: Climate change represents one of the most pressing challenges facing global agriculture in the 21st century. Rising temperatures, changing precipitation patterns, and increased frequency of extreme weather events are already affecting agricultural productivity across different regions...",
+      "...The evidence suggests that developing countries in tropical and subtropical regions are particularly vulnerable to climate-induced agricultural disruptions. Our meta-analysis of 350 studies reveals significant correlations between temperature anomalies and crop yield variations. Methodology: We conducted a systematic review of peer-reviewed literature published between 2015 and 2025, focusing on empirical studies that quantified climate impacts on major crop systems including wheat, rice, maize, and soybeans...",
+      "...Results indicate that adaptation strategies such as developing heat-tolerant cultivars, implementing efficient irrigation systems, and adopting climate-smart agricultural practices can mitigate up to 40% of projected yield losses. However, these interventions require substantial investment and technology transfer to resource-limited regions. Conclusion: Without significant global action on both mitigation and adaptation, climate change poses an existential threat to food security for billions of people worldwide..."
+    ],
+    "files": [
+      {
+        "type": "PDF",
+        "url": "https://example.com/papers/climate_agriculture_2025.pdf"
+      }
+    ],
+    "created_at": "2026-02-06T12:30:45.123Z",
+    "relevance_score": 0.95
+  },
+  {
+    "id": "doc_1738843201000_def456uvw",
+    "title": "Геополитические аспекты энергетического перехода в Восточной Европе",
+    "authors": [
+      "Иванов, Алексей Петрович",
+      "Сидорова, Мария Владимировна"
+    ],
+    "date": "2025-03-20",
+    "doi": "10.5678/rus.energy.2025.03.042",
+    "url": "https://cyberleninka.ru/article/n/geopolitical-energy-transition",
+    "language": "ru",
+    "source": "CyberLeninka",
+    "abstract": "В статье рассматриваются геополитические последствия перехода к возобновляемым источникам энергии в странах Восточной Европы. Анализируется влияние энергетической трансформации на экономические и политические отношения в регионе. Особое внимание уделяется роли природного газа как переходного топлива и вопросам энергетической безопасности. Исследование основано на данных за период 2020-2025 гг. и включает анализ энергетических стратегий 12 государств региона.",
+    "full_text_chunks": [
+      "Геополитические аспекты энергетического перехода в Восточной Европе. В статье рассматриваются геополитические последствия перехода к возобновляемым источникам энергии в странах Восточной Европы. Введение: Энергетический переход представляет собой один из ключевых факторов, определяющих геополитический ландшафт Восточной Европы в первой половине XXI века. Процесс декарбонизации экономики и переход к возобновляемым источникам энергии влечет за собой существенные изменения в структуре энергетических рынков, торговых потоках и политических альянсах...",
+      "...Анализ показывает, что зависимость от импорта углеводородов остается критическим фактором энергетической безопасности для большинства стран региона. Доля возобновляемых источников энергии в общем энергобалансе выросла с 8% в 2020 году до 15% в 2025 году, однако природный газ по-прежнему обеспечивает около 35% энергопотребления. Методология: Исследование основано на комплексном анализе статистических данных Международного энергетического агентства, национальных энергетических стратегий и экспертных оценок..."
+    ],
+    "created_at": "2026-02-06T12:30:46.234Z",
+    "snippet": "Геополитические последствия энергетического перехода в Восточной Европе..."
+  },
+  {
+    "id": "doc_1738843202000_ghi789rst",
+    "title": "Quantum Error Correction Using Surface Codes: Recent Advances and Future Directions",
+    "authors": [
+      "Zhang, Li",
+      "Mueller, Hans",
+      "Nakamura, Yuki"
+    ],
+    "date": "2024-11-08",
+    "url": "https://arxiv.org/abs/2411.12345",
+    "language": "en",
+    "source": "arXiv",
+    "abstract": "We present recent advances in quantum error correction using surface codes, with a focus on practical implementations in superconducting qubit systems. Our experimental results demonstrate error rates below the fault-tolerant threshold of 1% for the first time in a system with more than 50 physical qubits. We discuss the implications for scaling quantum computers and propose novel decoding algorithms that reduce classical processing overhead by 40% compared to existing methods.",
+    "full_text_chunks": [
+      "Quantum Error Correction Using Surface Codes: Recent Advances and Future Directions. We present recent advances in quantum error correction using surface codes, with a focus on practical implementations in superconducting qubit systems. Abstract: Quantum error correction is essential for building large-scale, fault-tolerant quantum computers. Surface codes represent one of the most promising approaches due to their high error thresholds and compatibility with two-dimensional qubit layouts. In this work, we report experimental demonstration of surface code error correction in a 53-qubit superconducting processor...",
+      "...Our implementation achieves a logical error rate of 0.8% per surface code cycle, which is below the theoretical threshold for fault-tolerant computation. This represents a significant milestone in the development of practical quantum computing systems. The key innovation lies in our adaptive decoder that uses machine learning to optimize error syndrome interpretation in real-time. Introduction: The path to universal quantum computation requires the ability to perform arbitrarily long quantum algorithms with bounded error probability. Surface codes offer an attractive solution by encoding logical qubits in a two-dimensional array of physical qubits..."
+    ],
+    "files": [
+      {
+        "type": "PDF",
+        "url": "https://arxiv.org/pdf/2411.12345.pdf"
+      }
+    ],
+    "created_at": "2026-02-06T12:30:47.345Z"
+  },
+  {
+    "id": "doc_1738843203000_jkl012mno",
+    "title": "人工智能在医疗诊断中的应用：系统综述",
+    "authors": [
+      "李明",
+      "王芳",
+      "张伟"
+    ],
+    "date": "2025-01-15",
+    "url": "https://www.semanticscholar.org/paper/abc123",
+    "language": "zh",
+    "source": "SemanticScholar",
+    "abstract": "本综述系统总结了人工智能技术在医疗诊断领域的最新应用进展。我们分析了深度学习、计算机视觉和自然语言处理技术在影像诊断、病理分析和临床决策支持系统中的应用。研究表明，AI辅助诊断系统在某些特定疾病的检测准确率已达到或超过人类专家水平。本文还讨论了AI医疗应用面临的伦理、法律和技术挑战。",
+    "full_text_chunks": [
+      "人工智能在医疗诊断中的应用：系统综述。本综述系统总结了人工智能技术在医疗诊断领域的最新应用进展。引言：人工智能（AI）技术的快速发展为医疗健康领域带来了革命性的变化。特别是在医疗诊断方面，深度学习算法展现出了巨大的潜力。本综述分析了2020-2025年间发表的500余篇相关文献，重点关注AI在影像诊断、病理分析、基因组学和临床决策支持系统中的应用...",
+      "...研究方法：我们系统检索了PubMed、Web of Science和中国知网等数据库，筛选出高质量的研究论文。纳入标准包括：使用深度学习或机器学习方法、涉及临床验证、样本量大于100例。主要发现：在放射影像诊断领域，AI算法在肺结节检测、乳腺癌筛查和脑卒中识别等任务中的准确率分别达到95%、94%和93%，部分场景下超过了资深放射科医生的表现..."
+    ],
+    "created_at": "2026-02-06T12:30:48.456Z"
+  },
+  {
+    "id": "doc_1738843204000_pqr345stu",
+    "title": "Sustainable Urban Development: Integrating Green Infrastructure in Smart Cities",
+    "authors": [
+      "Garcia, Maria",
+      "Brown, James",
+      "Kumar, Raj"
+    ],
+    "date": "2024-09-12",
+    "doi": "10.1016/j.cities.2024.09.012",
+    "url": "https://doi.org/10.1016/j.cities.2024.09.012",
+    "language": "en",
+    "source": "CrossRef",
+    "abstract": "This paper explores the integration of green infrastructure within smart city frameworks to enhance urban sustainability. Through case studies of 15 cities across Europe, Asia, and North America, we identify best practices and implementation challenges. Our findings show that cities combining IoT sensors with green spaces experience 25% reduction in urban heat island effects and 18% improvement in air quality. We propose a comprehensive framework for decision-makers to balance technological innovation with environmental sustainability.",
+    "full_text_chunks": [
+      "Sustainable Urban Development: Integrating Green Infrastructure in Smart Cities. This paper explores the integration of green infrastructure within smart city frameworks to enhance urban sustainability. Introduction: As urban populations continue to grow, cities face mounting pressure to provide livable environments while minimizing environmental impact. The concept of smart cities emphasizes technological solutions, but often overlooks the critical role of green infrastructure. Our research investigates how these two approaches can be synergistically combined to create truly sustainable urban environments...",
+      "...Case Study Analysis: We examined 15 cities that have implemented integrated green-smart infrastructure projects. Singapore's 'City in a Garden' initiative demonstrates how vertical gardens, green roofs, and smart irrigation systems can coexist with dense urban development. Copenhagen's bicycle superhighways integrate real-time traffic management with green corridors, reducing carbon emissions by 40% in targeted districts. Barcelona's superblocks program combines traffic calming, urban greening, and sensor networks to create pedestrian-friendly zones..."
+    ],
+    "files": [
+      {
+        "type": "PDF",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0264275124..."
+      }
+    ],
+    "created_at": "2026-02-06T12:30:49.567Z",
+    "snippet": "Integration of green infrastructure and smart city technology for sustainable urban development"
+  }
+]
