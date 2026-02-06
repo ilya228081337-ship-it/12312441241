@@ -21,6 +21,7 @@ export async function searchArXiv(params: SearchParams): Promise<APIResponse> {
     }
 
     const xmlText = await response.text();
+    console.log('arXiv raw response length:', xmlText.length);
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
 
@@ -29,6 +30,7 @@ export async function searchArXiv(params: SearchParams): Promise<APIResponse> {
     }
 
     const entries = xmlDoc.getElementsByTagName('entry');
+    console.log('arXiv entries found:', entries.length);
     const documents: Document[] = [];
 
     for (let i = 0; i < entries.length; i++) {

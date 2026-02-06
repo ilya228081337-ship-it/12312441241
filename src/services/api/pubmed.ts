@@ -16,6 +16,7 @@ export async function searchPubMed(params: SearchParams): Promise<APIResponse> {
     }
 
     const searchData = await searchResponse.json();
+    console.log('PubMed search response:', searchData);
     const pmids = searchData.esearchresult?.idlist || [];
 
     if (pmids.length === 0) {
@@ -60,6 +61,7 @@ export async function searchPubMed(params: SearchParams): Promise<APIResponse> {
       if (params.dateFrom && dateStr < params.dateFrom) continue;
 
       const abstract = article.abstracttext || article.source || article.snippet || '';
+      if (!title || !abstract) continue;
       const fullText = `${title}. ${abstract}`;
 
       const doc: Document = {

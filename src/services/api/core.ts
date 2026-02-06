@@ -8,7 +8,8 @@ export async function searchCORE(params: SearchParams): Promise<APIResponse> {
     const query = encodeURIComponent(params.keywords);
     const limit = Math.min(params.maxResults || 20, 100);
 
-    const url = `${BASE_URL}?q=${query}&limit=${limit}&scroll=false`;
+    const url = `${BASE_URL}?q=${query}&limit=${limit}`;
+    console.log('CORE search URL:', url);
 
     const response = await fetch(url, {
       headers: {
@@ -17,6 +18,7 @@ export async function searchCORE(params: SearchParams): Promise<APIResponse> {
     });
 
     if (!response.ok) {
+      console.warn(`CORE API status: ${response.status}`);
       if (response.status === 401 || response.status === 403 || response.status === 429) {
         return {
           success: true,
@@ -28,6 +30,7 @@ export async function searchCORE(params: SearchParams): Promise<APIResponse> {
     }
 
     const data = await response.json();
+    console.log('CORE response:', data);
     const documents: Document[] = [];
 
     if (data.results && Array.isArray(data.results)) {

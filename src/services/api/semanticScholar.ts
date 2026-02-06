@@ -27,9 +27,11 @@ export async function searchSemanticScholar(params: SearchParams): Promise<APIRe
     }
 
     const data = await response.json();
+    console.log('SemanticScholar response:', data);
     const documents: Document[] = [];
 
-    if (!data || (!data.data && !Array.isArray(data))) {
+    const items = data.data || [];
+    if (!Array.isArray(items) || items.length === 0) {
       return {
         success: true,
         documents: [],
@@ -37,8 +39,7 @@ export async function searchSemanticScholar(params: SearchParams): Promise<APIRe
       };
     }
 
-    if (data.data && Array.isArray(data.data)) {
-      for (const item of data.data) {
+    for (const item of items) {
         const abstract = cleanText(item.abstract || '');
         const fullText = abstract || item.title || '';
 
@@ -72,7 +73,6 @@ export async function searchSemanticScholar(params: SearchParams): Promise<APIRe
         };
 
         documents.push(doc);
-      }
     }
 
     return {
