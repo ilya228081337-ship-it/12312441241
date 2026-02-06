@@ -5,10 +5,10 @@ const BASE_URL = 'https://doaj.org/api/v3/search/articles';
 
 export async function searchDOAJ(params: SearchParams): Promise<APIResponse> {
   try {
-    const query = encodeURIComponent(params.keywords);
+    const query = params.keywords;
     const pageSize = Math.min(params.maxResults || 20, 100);
 
-    let url = `${BASE_URL}?q=bibjson.title:"${query}" OR bibjson.abstract:"${query}"&pageSize=${pageSize}&sort=-bibjson.published_date`;
+    const url = `${BASE_URL}/${query}?pageSize=${pageSize}&sort=created_date:desc`;
 
     const response = await fetch(url);
 

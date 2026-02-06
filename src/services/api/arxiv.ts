@@ -6,11 +6,15 @@ const BASE_URL = 'https://export.arxiv.org/api/query';
 export async function searchArXiv(params: SearchParams): Promise<APIResponse> {
   try {
     const query = encodeURIComponent(params.keywords);
-    const maxResults = params.maxResults || 20;
+    const maxResults = Math.min(params.maxResults || 20, 100);
 
     const url = `${BASE_URL}?search_query=all:${query}&start=0&max_results=${maxResults}&sortBy=submittedDate&sortOrder=descending`;
 
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      headers: {
+        'User-Agent': 'ResearchCollector/1.0 (mailto:research@example.com)'
+      }
+    });
 
     if (!response.ok) {
       throw new Error(`arXiv API error: ${response.status}`);

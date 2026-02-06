@@ -12,10 +12,15 @@ export async function searchSemanticScholar(params: SearchParams): Promise<APIRe
 
     if (params.dateFrom) {
       const year = parseInt(params.dateFrom.split('-')[0]);
-      url += `&year=${year}-`;
+      const currentYear = new Date().getFullYear();
+      url += `&year=${year}-${currentYear}`;
     }
 
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
 
     if (!response.ok) {
       throw new Error(`Semantic Scholar API error: ${response.status}`);

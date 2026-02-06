@@ -6,15 +6,18 @@ const BASE_URL = 'https://api.openalex.org';
 export async function searchOpenAlex(params: SearchParams): Promise<APIResponse> {
   try {
     const query = encodeURIComponent(params.keywords);
-    const dateFilter = params.dateFrom && params.dateTo
-      ? `&filter=publication_date:${params.dateFrom}..${params.dateTo}`
-      : '';
+    const perPage = Math.min(params.maxResults || 20, 200);
 
-    const url = `${BASE_URL}/works?search=${query}${dateFilter}&per-page=${params.maxResults || 20}`;
+    let url = `${BASE_URL}/works?search=${query}&per-page=${perPage}&sort=publication_date:desc`;
+
+    if (params.dateFrom) {
+      url += `&filter=from_publication_date:${params.dateFrom}`;
+    }
 
     const response = await fetch(url, {
       headers: {
-        'User-Agent': 'ResearchCollector/1.0 (mailto:research@example.com)'
+        'User-Agent': 'ResearchCollector/1.0 (mailto:research@example.com)',
+        'Accept': 'application/json'
       }
     });
 

@@ -1,20 +1,25 @@
 import { Document, SearchParams, APIResponse } from '../../types';
 import { generateId, cleanText, chunkText, formatDate } from '../../utils/textProcessing';
 
-const BASE_URL = 'https://api.core.ac.uk/v3/search';
+const BASE_URL = 'https://api.core.ac.uk/v3/search/works';
 
 export async function searchCORE(params: SearchParams): Promise<APIResponse> {
   try {
     const query = encodeURIComponent(params.keywords);
-    const limit = Math.min(params.maxResults || 20, 100);
+    const limit = Math.min(params.maxResults || 20, 10);
 
-    let url = `${BASE_URL}?q=${query}&limit=${limit}&sort=-datePublished`;
+    const url = `${BASE_URL}?q=${query}&limit=${limit}`;
 
     const response = await fetch(url);
 
     if (!response.ok) {
-      if (response.status === 401) {
-        throw new Error('CORE API requires authentication token');
+      if (response.status === 401 || response.status === 403) {
+        console.warn('CORE API requires authentication. Skipping...');
+        return {
+          success: true,
+          documents: [],
+          source: 'CORE'
+        };
       }
       throw new Error(`CORE API error: ${response.status}`);
     }
